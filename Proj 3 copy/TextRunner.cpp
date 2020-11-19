@@ -11,7 +11,9 @@ using namespace std;
 TextRunner::TextRunner(West westIn, North northIn, South southIn, SouthEast southEastIn) {
     //initialize vectors
     for (int i = 0; i < 10; i++) {
-        
+        westVect.push_back();
+        westVect[i] = i;
+        //and so on
     }
     //set random time seed every time
     srand(time(NULL));

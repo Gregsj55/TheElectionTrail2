@@ -14,14 +14,19 @@
 using namespace std;
 
 class Game{
-private:
+
+    private:
+
     int turn;
-public:
-    Game(string playa, string oppo, string playaParty, string oppoParty);
+
+    public:
+
+    Game(string playa, string oppo, string playerparty, string oppoparty);
     bool isOver();
     bool winCondition();
     void playerTurn();
     void opponentTurn();
+    
 };
 
 #endif
