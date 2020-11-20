@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "Player.h"
-#include "Opponent.h"
 #include "North.h"
 #include "South.h"
 #include "SouthEast.h"
@@ -22,7 +21,6 @@ class Game{
     public:
 
     Game(string playa, string oppo, string playerparty, string oppoparty);
-    bool isOver();
     bool winCondition();
     void playerTurn();
     void opponentTurn();

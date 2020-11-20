@@ -11,9 +11,10 @@ using namespace std;
 TextRunner::TextRunner(West westIn, North northIn, South southIn, SouthEast southEastIn) {
     //initialize vectors
     for (int i = 0; i < 10; i++) {
-        westVect.push_back();
-        westVect[i] = i;
-        //and so on
+        westVect.push_back(i);
+        northVect.push_back(i);
+        southVect.push_back(i);
+        southEastVect.push_back(i);
     }
     //set random time seed every time
     srand(time(NULL));
@@ -32,30 +33,38 @@ void TextRunner::setNumTurns(int numTurnsIn) {
     numTurns = numTurnsIn;
 }
 void TextRunner::westChoice() {
-    //randomly get 1 number from vector, then remove it from vector
+    int random = rand()%westVect.size();
     //give choice
     //get user input
     //change state veiws based on choice
+    //print to file
     numTurns++;
+    westVect.erase(westVect.begin()+random);
 }
 void TextRunner::southChoice() {
-    //randomly get 1 number from vector, then remove it from vector
+    int random = rand()%westVect.size();
     //give choice
     //get user input
     //change state veiws based on choice
+    //print to file
     numTurns++;
+    westVect.erase(westVect.begin()+random);
 }
 void TextRunner::northChoice() {
-    //randomly get 1 number from vector, then remove it from vector
+    int random = rand()%westVect.size();
     //give choice
     //get user input
     //change state veiws based on choice
+    //print to file
     numTurns++;
+    westVect.erase(westVect.begin()+random);
 }
 void TextRunner::southEastChoice() {
-    //randomly get 1 number from vector, then remove it from vector
+    int random = rand()%westVect.size();
     //give choice
     //get user input
     //change state veiws based on choice
+    //print to file
     numTurns++;
+    westVect.erase(westVect.begin()+random);
 }

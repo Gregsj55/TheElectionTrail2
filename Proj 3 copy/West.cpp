@@ -23,5 +23,4 @@ void West::addPersonality(int add) { personality += add; };
 void West::addEconomy(int add) { economy += add; };
 void West::addSupport(int add) { support += add; };
 string West::winning() {  }; //return whos winning
-void West::printDetails() {  }; //file reading
 

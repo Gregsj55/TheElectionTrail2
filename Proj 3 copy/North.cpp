@@ -23,5 +23,4 @@ void North::addPersonality(int add) { personality += add; };
 void North::addEconomy(int add) { economy += add; };
 void North::addSupport(int add) { support += add; };
 string North::winning() {  }; //return whos winning
-void North::printDetails() {  }; //file reading
 

@@ -28,7 +28,6 @@ public:
     void addEconomy(int add);
     void addSupport(int add);
     string winning(); //return whos winning
-    void printDetails(); //file reading
 };
 
 #endif

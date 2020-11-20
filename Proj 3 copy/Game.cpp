@@ -8,7 +8,9 @@ Game::Game(string playa, string oppo, string playerparty, string oppoparty){
     turn = 0;
         
     Player p(playa, playerparty);
-    Opponent o(oppo, oppoparty);
+    Player o(oppo, oppoparty);
+
+    Player people[2] = {p,o};
 
     // sets up player and opponent objects for the game.
 
@@ -42,16 +44,19 @@ Game::Game(string playa, string oppo, string playerparty, string oppoparty){
 
 void Game::playerTurn(){
     //do player turn things
+    //menu for region to go to
+    //user input for region
+    //check if region has been used out of choices
+    //call TextRunner for that region
 }
 void Game::opponentTurn(){
     // make the opponent stuff
+    //same as opponent but no choices
 }
 bool Game::winCondition() {
-    //check stats with a search sort algorithm to determine winner and play text for end of game
-}
-bool Game::isOver() {
-    if (turn == 25) {
-        return true;
-    } 
-    return false;
+    //check stats with a search sort algorithm 
+    //to determine winner and play text for end of game
+    //called after 25 turns
+    //can read from file that is being written to
+    //has menu function in GameDriver
 }

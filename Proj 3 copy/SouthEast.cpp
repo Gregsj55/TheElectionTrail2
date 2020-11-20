@@ -23,5 +23,4 @@ void SouthEast::addPersonality(int add) { personality += add; };
 void SouthEast::addEconomy(int add) { economy += add; };
 void SouthEast::addSupport(int add) { support += add; };
 string SouthEast::winning() {  }; //return whos winning
-void SouthEast::printDetails() {  }; //file reading
 

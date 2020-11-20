@@ -2,6 +2,8 @@
 #define TEXTRUNNER_H
 
 #include <iostream>
+#include <vector>
+#include <fstream>
 #include "North.h"
 #include "West.h"
 #include "South.h"
@@ -13,10 +15,10 @@ class TextRunner {
 private:
     int numTurns;
     //idk why these dont work
-    vector<int> westVect();
-    vector<int> northVect();
-    vector<int> southVect();
-    vector<int> southEastVect();
+    vector<int> westVect;
+    vector<int> northVect;
+    vector<int> southVect;
+    vector<int> southEastVect;
 public:
     //constructor
     TextRunner(West westIn, North northIn, South southIn, SouthEast southEastIn);
