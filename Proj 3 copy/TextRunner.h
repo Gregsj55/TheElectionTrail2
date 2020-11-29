@@ -14,19 +14,22 @@ using namespace std;
 class TextRunner {
 private:
     int numTurns;
-    //idk why these dont work
+    //vectors of the options avalible
     vector<int> westVect;
     vector<int> northVect;
     vector<int> southVect;
     vector<int> southEastVect;
+
+    //file
+    fstream file;
 public:
     //constructor
-    TextRunner(West westIn, North northIn, South southIn, SouthEast southEastIn);
-    //member functions
-    void westChoice();
-    void northChoice(); 
-    void southChoice();
-    void southEastChoice();
+    TextRunner();
+    //member functions -- the choices give the text for every choice and write to the files
+    int westChoice();
+    int northChoice(); 
+    int southChoice();
+    int southEastChoice();
     int getNumTurns();
     void setNumTurns(int numTurnsIn);
 };

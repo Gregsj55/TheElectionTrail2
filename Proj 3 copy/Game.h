@@ -9,6 +9,7 @@
 #include "South.h"
 #include "SouthEast.h"
 #include "West.h"
+#include "TextRunner.h"
 
 using namespace std;
 
@@ -17,13 +18,18 @@ class Game{
     private:
 
     int turn;
+    North n1;
+    South s1;
+    SouthEast se1;
+    West w1;
+    TextRunner text;
 
     public:
 
-    Game(string playa, string oppo, string playerparty, string oppoparty);
-    bool winCondition();
-    void playerTurn();
-    void opponentTurn();
+    Game(string playa, string oppo, string playerparty, string oppoparty); // default constructor
+    bool winCondition(); // calculate winner
+    bool playerTurn(); //player actions
+    void opponentTurn(); //opponent actions
     
 };
 

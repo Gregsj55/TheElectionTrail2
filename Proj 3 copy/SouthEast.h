@@ -14,9 +14,12 @@ private:
     int support; //communist 0-99
     int numDecisions; //up to 10
     int topPolicy; //0-3 determined in game class
+    fstream file;
 public:
     //constructors
     SouthEast(int topPolicyIn);
+    SouthEast();
+    void SouthEastSet(int top);
     //Member functions
     int getAuthority();
     int getPersonality();
@@ -28,6 +31,7 @@ public:
     void addEconomy(int add);
     void addSupport(int add);
     string winning(); //return whos winning
+    void questionrunner(bool a, int questionNum);
 };
 
 #endif

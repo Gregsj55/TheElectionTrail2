@@ -2,6 +2,7 @@
 
     
 Player::Player(string n, string p){
+    //do constructor things
     name = n;
     party = p;
     likeability = 0;
