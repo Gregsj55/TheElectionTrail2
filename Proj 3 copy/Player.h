@@ -14,6 +14,6 @@ class Player{
     string getName(); // returns name
     string getParty(); // returns party affiliation
     void liked();// increments the likability score by one
-    int Player::getLikeability(); // returns likability score
+    int getLikeability(); // returns likability score
 };
 #endif

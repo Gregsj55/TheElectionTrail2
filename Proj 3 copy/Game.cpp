@@ -48,17 +48,19 @@ bool Game::playerTurn(){
     int choice;
     string uChoice;
     //do player turn things
-    cout << "What region would you like to select: " << endl;
-    cout << "1. North" << endl;
-    cout << "2. South" << endl;
-    cout << "3. SouthEast" << endl;
-    cout << "4. West" << endl;
+    cout <<"####################" << endl;
+    cout << "Great choice, now choose which region!" << endl;
+    cout << "1, North" << endl;
+    cout << "2, South" << endl;
+    cout << "3, South East" << endl;
+    cout << "4, West" << endl;
+    cout << "####################" << endl;
+    cout << "\n Region choice:" << endl;
     //get input
     getline(cin,inString);
-    input = stoi(inString);
     //do  the things based on input
     //return true if successful, false if not
-    if (input == 1) {
+    if (inString == "1") {
         if (n1.getNumDecisions() < 10) {
             choice = text.northChoice();
             getline(cin,uChoice);
@@ -74,7 +76,7 @@ bool Game::playerTurn(){
             cout << "You have finished all of the decisions in the North, please choose again." << endl;
             return false;
         }
-    } else if (input == 2) {
+    } else if (inString == "2") {
         if (s1.getNumDecisions() < 10) {
             choice = text.southChoice();
             getline(cin,uChoice);
@@ -90,7 +92,7 @@ bool Game::playerTurn(){
             cout << "You have finished all of the decisions in the South, please choose again." << endl;
             return false;
         }
-    } else if (input == 3) {
+    } else if (inString == "3") {
         if (se1.getNumDecisions() < 10) {
             choice = text.southEastChoice();
             getline(cin,uChoice);
@@ -106,7 +108,7 @@ bool Game::playerTurn(){
             cout << "You have finished all of the decisions in the South East, please choose again." << endl;
             return false;
         }
-    } else if (input == 4) {
+    } else if (inString == "4") {
         if (w1.getNumDecisions() < 10) {
             choice = text.westChoice();
             getline(cin,uChoice);

@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h>
 #include <time.h>
 #include <vector>
 #include <fstream>
@@ -26,13 +25,13 @@ void menu(){
     cout << "3, Coup Now" << endl;
     cout << "4, Quit Game" << endl;
     cout << "####################" << endl;
+    cout << "\nWhich option would you like to choose: " << endl;
 
 }
 
-void endMenu() {
+void endMenu(bool win) {
     //this will print the end of game menu
     cout << "Game Over" << endl;
-    cout << "Nobody ever wins" << endl;
 }
 
 void tutorial() {
@@ -52,6 +51,9 @@ int main(){
     //variables
     string party, oParty;
     string name, oName;
+    string entry, region;
+    bool ran = false;
+    bool win = false;
     
     //do main things
     // run some stuff
@@ -59,34 +61,70 @@ int main(){
     sleep(4);
     //get paid, get laid, gatorade
     cout << "Welcome to the Election Trail\n What is your name?" << endl;// input name into name variable
+    getline(cin,name);
 
     cout << "Now that you've chosen a name, Your next task is to pick your party!" << endl;
 
     cout << "Each party has different goals and ideals, and these will affect your in game decisions" << endl;
     sleep(3);// wait about 3000 miliseconds
     cout << "Now is your chance to choose your party, choose wisely, for this cannot be changed" << endl;
-    sleep(1.5);// wait about 1500 miliseconds
+    sleep(1);// wait about 1000 miliseconds
     cout << "Enter 1 for Fascist, Enter 2 for Communist" << endl;
-    sleep(1.5);
-    // wait about 1500 miliseconds
+    
+    while (party != "69") {
+        getline(cin,party);
+        if(party == "1") {
+            party = "communist";
+            oParty = "fascist";
+            break;
+        } else if (party == "2") {
+            oParty = "communist";
+            party = "fascist";
+            break;
+        } else {
+            cout << "Invaild entry, try again" << endl;
+            getline(cin,party);
+        }
+    }
+    sleep(1);
+    // wait about 1000 miliseconds
     cout << "In this game, you have a political opponent, who will be your opposition the entire game." << endl;
-    sleep(.5);
-
-    cout << "What should we name your opponent?" << endl;
-    // input opponent's name
     sleep(1);
 
+    cout << "What should we name your opponent?" << endl;
+    getline(cin,oName);
+    sleep(1);
+
+    Game game1 = Game(name,oName,party,oParty);
     cout << "The game is all set up, now it's time for you to take your first step on the Election Trail" << endl;
-    sleep(.5);
+    sleep(1);
     cout << "BUM BUm Bum bummm" << endl;
 
-    menu(); cout << endl;
     tutorial();
     //if we're feeling frisky loop up to 25 times
     for(int i = 0; i < 25; i++){
-        int d;//decision for this turn
-        //menu();
-
-
+        menu();
+        getline(cin,entry);
+        while (entry != "69") {
+            if (entry == "1") {
+                while (ran == false) {
+                    ran = game1.playerTurn();
+                }
+                break;
+            } else if (entry == "2") {
+                tutorial();
+            } else if (entry == "3") {
+                win = game1.winCondition();
+                endMenu(win);
+                return 0; // end the program
+            } else if (entry == "4") {
+                cout << "See ya next time!" << endl;
+                return 0;
+            } else {
+                cout << "Well that looks wrong, try again!" << endl;
+            }
+            menu();
+            getline(cin,entry);
+        }
     }
 }
