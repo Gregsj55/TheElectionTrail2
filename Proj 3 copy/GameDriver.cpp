@@ -35,6 +35,7 @@ void endMenu(bool win) {
 }
 
 void tutorial() {
+    string useless;
     //print game tutorial
     cout << "This game has two parties, communist and fascist" << endl;
     cout << "Your political battle ground is divided into four regions" << endl;
@@ -45,6 +46,8 @@ void tutorial() {
     cout << "At any point you can coup now, which ends the game where you are\nand determines if you would be elected or not\nthis is risky, but still an option" << endl;
     cout << "There is no perfect path to victory, but there is optimal play" << endl;
     cout << "Happy Hunting       " << endl;
+    cout << "Press enter to leave. " << endl;
+    getline(cin,useless);
 }
 
 int main(){
@@ -95,7 +98,7 @@ int main(){
     getline(cin,oName);
     sleep(1);
 
-    Game game1 = Game(name,oName,party,oParty);
+    Game game1(name,oName,party,oParty);
     cout << "The game is all set up, now it's time for you to take your first step on the Election Trail" << endl;
     sleep(1);
     cout << "BUM BUm Bum bummm" << endl;
