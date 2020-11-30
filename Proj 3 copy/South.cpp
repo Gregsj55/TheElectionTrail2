@@ -39,7 +39,7 @@ void South::addPersonality(int add) { personality += add; };
 void South::addEconomy(int add) { economy += add; };
 void South::addSupport(int add) { support += add; };
 
-string South::winning() {  }; //return whos winning
+string South::winning() { return ""; }; //return whos winning
 void South::questionrunner(bool a, int questionNum) {
     file.open("file.txt");
     switch (questionNum) { // All of the text is in textrunner, this code is for the stat changes of each decision corresponding with each question

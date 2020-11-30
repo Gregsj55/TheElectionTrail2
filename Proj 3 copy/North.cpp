@@ -39,7 +39,7 @@ void North::addAuthority(int add) { authority += add; };
 void North::addPersonality(int add) { personality += add; };
 void North::addEconomy(int add) { economy += add; };
 void North::addSupport(int add) { support += add; };
-string North::winning() {  }; //return whos winning
+string North::winning() { return ""; }; //return whos winning
 void North::questionrunner(bool a, int questionNum) {
     file.open("file.txt");
     switch (questionNum) {

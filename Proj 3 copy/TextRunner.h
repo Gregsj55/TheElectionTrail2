@@ -21,7 +21,7 @@ private:
     vector<int> southEastVect;
 
     //file
-    ofstream file;
+    fstream file;
 public:
     //constructor
     TextRunner();

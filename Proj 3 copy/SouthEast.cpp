@@ -38,7 +38,7 @@ void SouthEast::addAuthority(int add) { authority += add; };
 void SouthEast::addPersonality(int add) { personality += add; };
 void SouthEast::addEconomy(int add) { economy += add; };
 void SouthEast::addSupport(int add) { support += add; };
-string SouthEast::winning() {  }; //return whos winning
+string SouthEast::winning() { return ""; }; //return whos winning
 void SouthEast::questionrunner(bool a, int questionNum) {
     file.open("file.txt");
     switch (questionNum) {

@@ -139,4 +139,5 @@ bool Game::winCondition() {
     //called after 25 turns
     //can read from file that is being written to
     //has menu function in GameDriver
+    return true;
 }

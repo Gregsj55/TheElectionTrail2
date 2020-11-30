@@ -15,7 +15,7 @@ private:
     int support; //communist 0-99
     int numDecisions; //up to 10
     int topPolicy; //0-3 determined in game class
-    ofstream file;
+    fstream file;
 public:
     //constructors
     West(int topPolicyIn);
