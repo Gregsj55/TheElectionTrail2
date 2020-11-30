@@ -260,6 +260,7 @@ int TextRunner::northChoice() {
     file.open("file.txt");
     
     int randomNum = rand()%northVect.size();
+    cout << randomNum << endl;
     random = northVect.at(randomNum);
     if(random == 0){
         cout << "Sup, Welcome to the North!" << endl;
