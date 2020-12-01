@@ -23,13 +23,17 @@ class Game{
     SouthEast se1;
     West w1;
     TextRunner text;
+    TextRunner oText;
+    string opp;
+    string oppP;
 
     public:
 
     Game(string playa, string oppo, string playerparty, string oppoparty); // default constructor
     bool winCondition(); // calculate winner
     bool playerTurn(); //player actions
-    void opponentTurn(); //opponent actions
+    bool opponentTurn(); //opponent actions
+    void winning(); //for the winning menu option from gameDriver
     
 };
 

@@ -5,10 +5,10 @@ using namespace std;
 
 //constructors
 South::South(int topPolicyIn) {
-    authority = 60;
-    personality = 60;
-    economy = 40;
-    support = 40;
+    authority = 55;
+    personality = 55;
+    economy = 45;
+    support = 45;
     numDecisions = 0;
     topPolicy = topPolicyIn;
 }
@@ -21,10 +21,10 @@ South::South(){
     topPolicy = 0;
 }
 void South::SouthSet(int top){
-    authority = 60;
-    personality = 60;
-    economy = 40;
-    support = 40;
+    authority = 55;
+    personality = 55;
+    economy = 45;
+    support = 45;
     numDecisions = 0;
     topPolicy = top;
 }
@@ -39,8 +39,17 @@ void South::addPersonality(int add) { personality += add; };
 void South::addEconomy(int add) { economy += add; };
 void South::addSupport(int add) { support += add; };
 
-string South::winning() { return ""; }; //return whos winning
-void South::questionrunner(bool a, int questionNum) {
+string South::winning() {
+ 
+    if((economy + support) > (authority + personality)){
+        return "communist";
+    }
+    else if((economy + support) < (authority + personality)){
+        return "fascist";
+    }
+    else return "tied";
+}
+void South::questionrunner(bool a, int questionNum, bool opp) {
     ofstream file("file.txt", ios::app);
     switch (questionNum) { // All of the text is in textrunner, this code is for the stat changes of each decision corresponding with each question
         case 0: 
@@ -214,7 +223,7 @@ void South::questionrunner(bool a, int questionNum) {
             }
             break;
     }
-    numDecisions++;
+    if(!opp)numDecisions++;
     file.close();
 }
 

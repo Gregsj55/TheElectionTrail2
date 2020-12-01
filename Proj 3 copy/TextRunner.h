@@ -25,10 +25,14 @@ public:
     //constructor
     TextRunner();
     //member functions -- the choices give the text for every choice and write to the files
-    int westChoice();
-    int northChoice(); 
-    int southChoice();
-    int southEastChoice();
+    int westChoice(bool opp);
+    int westSize();
+    int northChoice(bool opp); 
+    int northSize();
+    int southChoice(bool opp);
+    int southSize();
+    int southEastChoice(bool opp);
+    int southEastSize();
     int getNumTurns();
     void setNumTurns(int numTurnsIn);
 };

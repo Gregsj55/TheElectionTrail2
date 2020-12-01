@@ -21,10 +21,10 @@ SouthEast::SouthEast(){
     topPolicy = 0;
 }
 void SouthEast::SouthEastSet(int top){
-    authority = 60;
-    personality = 60;
-    economy = 40;
-    support = 40;
+    authority = 55;
+    personality = 55;
+    economy = 45;
+    support = 45;
     numDecisions = 0;
     topPolicy = top;
 }
@@ -38,8 +38,17 @@ void SouthEast::addAuthority(int add) { authority += add; };
 void SouthEast::addPersonality(int add) { personality += add; };
 void SouthEast::addEconomy(int add) { economy += add; };
 void SouthEast::addSupport(int add) { support += add; };
-string SouthEast::winning() { return ""; }; //return whos winning
-void SouthEast::questionrunner(bool a, int questionNum) {
+string SouthEast::winning() {
+ 
+    if((economy + support) > (authority + personality)){
+        return "communist";
+    }
+    else if((economy + support) < (authority + personality)){
+        return "fascist";
+    }
+    else return "tied";
+}
+void SouthEast::questionrunner(bool a, int questionNum, bool opp) {
     ofstream file("file.txt", ios::app);
     switch (questionNum) {
         case 0: 
@@ -193,7 +202,7 @@ void SouthEast::questionrunner(bool a, int questionNum) {
             }
             break;
     }
-    numDecisions++;
+    if(!opp)numDecisions++;
     file.close();
 }
 

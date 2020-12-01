@@ -14,18 +14,18 @@ North::North(){
 
 }
 void North::NorthSet(int top){
-    authority = 40;
-    personality = 40;
-    economy = 60;
-    support = 60;
+    authority = 45;
+    personality = 45;
+    economy = 55;
+    support = 55;
     numDecisions = 0;
     topPolicy = top;
 }
 North::North(int topPolicyIn) {
-    authority = 40;
-    personality = 40;
-    economy = 60;
-    support = 60;
+    authority = 45;
+    personality = 45;
+    economy = 55;
+    support = 55;
     numDecisions = 0;
     topPolicy = topPolicyIn;
 }
@@ -39,8 +39,18 @@ void North::addAuthority(int add) { authority += add; };
 void North::addPersonality(int add) { personality += add; };
 void North::addEconomy(int add) { economy += add; };
 void North::addSupport(int add) { support += add; };
-string North::winning() { return ""; }; //return whos winning
-void North::questionrunner(bool a, int questionNum) {
+
+string North::winning() {
+ 
+    if((economy + support) > (authority + personality)){
+        return "communist";
+    }
+    else if((economy + support) < (authority + personality)){
+        return "fascist";
+    }
+    else return "tied";
+} //return whos winning
+void North::questionrunner(bool a, int questionNum, bool opp) {
     ofstream file("file.txt", ios::app);
     switch (questionNum) {
         // This is for every question and all of the options, each one fits the question. 
@@ -215,7 +225,7 @@ void North::questionrunner(bool a, int questionNum) {
             }
             break;
     }
-    numDecisions++;
+    if(!opp)numDecisions++;
     file.close();
 }
  

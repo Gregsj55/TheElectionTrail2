@@ -31,7 +31,7 @@ public:
     void addEconomy(int add);
     void addSupport(int add);
     string winning(); //return whos winning
-    void questionrunner(bool a, int questionNum);
+    void questionrunner(bool a, int questionNum, bool opp);
 };
 
 #endif

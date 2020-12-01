@@ -5,10 +5,10 @@ using namespace std;
 
 //constructors
 West::West(int topPolicyIn) {
-    authority = 40;
-    personality = 40;
-    economy = 60;
-    support = 60;
+    authority = 45;
+    personality = 45;
+    economy = 55;
+    support = 55;
     numDecisions = 0;
     topPolicy = topPolicyIn;
 }
@@ -21,10 +21,10 @@ West::West(){
     topPolicy =0;
 }
 void West::WestSet(int top){
-    authority = 40;
-    personality = 40;
-    economy = 60;
-    support = 60;
+    authority = 45;
+    personality = 45;
+    economy = 55;
+    support = 55;
     numDecisions = 0;
     topPolicy = top;
 }
@@ -38,8 +38,17 @@ void West::addAuthority(int add) { authority += add; };
 void West::addPersonality(int add) { personality += add; };
 void West::addEconomy(int add) { economy += add; };
 void West::addSupport(int add) { support += add; };
-string West::winning() { return ""; }; //return whos winning
-void West::questionrunner(bool a, int questionNum) {
+string West::winning() {
+ 
+    if((economy + support) > (authority + personality)){
+        return "communist";
+    }
+    else if((economy + support) < (authority + personality)){
+        return "fascist";
+    }
+    else return "tied";
+}
+void West::questionrunner(bool a, int questionNum, bool opp) {
     ofstream file("file.txt", ios::app);
     switch (questionNum) {
         case 0: 
@@ -193,7 +202,7 @@ void West::questionrunner(bool a, int questionNum) {
             }
             break;
     }
-    numDecisions++;
+    if(!opp)numDecisions++;
     file.close();
 }
 
