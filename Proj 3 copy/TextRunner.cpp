@@ -32,13 +32,14 @@ void TextRunner::setNumTurns(int numTurnsIn) {
 }
 int TextRunner::westChoice() {
     //open file
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
 
     //get random number within range of vector size
-    int random = rand()%westVect.size();
+    int random;
+    int randomNum = rand()%westVect.size();
 
     //get vector element at that random number
-    random = westVect.at(random);
+    random = westVect.at(randomNum);
     if (random == 0) {
         cout << "Golly Jee Welcome to the West!" << endl;
         cout << "Your opponent wants you to have a push up competition to determine dominance before the debate." << endl;
@@ -138,16 +139,17 @@ int TextRunner::westChoice() {
     numTurns++;
 
     //remove from vector
-    westVect.erase(westVect.begin()+random);
+    westVect.erase(westVect.begin()+randomNum);
 
     //colde file and return
     file.close();
     return random;
 }
 int TextRunner::southChoice() {
-    file.open("file.txt");
-    int random = rand()%southVect.size();
-    random = southVect.at(random);
+    int random;
+    ofstream file("file.txt", ios::app);
+    int randomNum = rand()%southVect.size();
+    random = southVect.at(randomNum);
     if(random == 0){
         cout << "Howdy, Welcome to the South" << endl;
         file << "Howdy, Welcome to the South" << endl;
@@ -249,15 +251,17 @@ int TextRunner::southChoice() {
     //bunch of if else
     //write to file
     numTurns++;
-    westVect.erase(southVect.begin()+random);
+    southVect.erase(southVect.begin()+randomNum);
     file.close();
     return random;
 }
 int TextRunner::northChoice() {
-    file.open("file.txt");
+    int random;
+    ofstream file("file.txt", ios::app);
     
-    int random = rand()%northVect.size();
-    random = northVect.at(random);
+    int randomNum = rand()%northVect.size();
+    cout << randomNum << endl;
+    random = northVect.at(randomNum);
     if(random == 0){
         cout << "Sup, Welcome to the North!" << endl;
         cout << "Your opponent attacked your policies online on reddit" << endl;
@@ -353,14 +357,15 @@ int TextRunner::northChoice() {
     //bunch of if else
     //write to file
     numTurns++;
-    westVect.erase(northVect.begin()+random);
+    northVect.erase(northVect.begin()+randomNum);
     file.close();
     return random;
 }
 int TextRunner::southEastChoice() {
-    file.open("file.txt");
-    int random = rand()%southEastVect.size();
-    random = southEastVect.at(random);
+    int random;
+    ofstream file("file.txt", ios::app);
+    int randomNum = rand()%southEastVect.size();
+    random = southEastVect.at(randomNum);
     if (random == 0) {
         cout << "Hey Sugar, welcome to the South East!" << endl;
         cout << "The iced tea you were served was outright bad." << endl;
@@ -453,7 +458,7 @@ int TextRunner::southEastChoice() {
         file << "Say n to try to bribe them" << endl;
     }
     numTurns++;
-    westVect.erase(southEastVect.begin()+random);
+    southEastVect.erase(southEastVect.begin()+randomNum);
     file.close();
     return random;
 }

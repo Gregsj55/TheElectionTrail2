@@ -1,0 +1,15 @@
+
+Hey lil mama, Welcome to the North
+Your SO wants to cuddle because you've been so good
+Say y to be the big spoon
+Say n to be the little spoon
+Choice: n
+Personality -4
+Support +5
+Hey bud, Welcome back to the North
+Pizza or Burger
+Say y to Pizza
+Say n to Burger
+Choice: y
+Authority +7
+Economy -3

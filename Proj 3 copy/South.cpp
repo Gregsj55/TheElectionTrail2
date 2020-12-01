@@ -39,9 +39,9 @@ void South::addPersonality(int add) { personality += add; };
 void South::addEconomy(int add) { economy += add; };
 void South::addSupport(int add) { support += add; };
 
-string South::winning() {  }; //return whos winning
+string South::winning() { return ""; }; //return whos winning
 void South::questionrunner(bool a, int questionNum) {
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     switch (questionNum) { // All of the text is in textrunner, this code is for the stat changes of each decision corresponding with each question
         case 0: 
             if (a) {
@@ -214,6 +214,7 @@ void South::questionrunner(bool a, int questionNum) {
             }
             break;
     }
+    numDecisions++;
     file.close();
 }
 
