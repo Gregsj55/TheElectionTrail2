@@ -40,7 +40,7 @@ void West::addEconomy(int add) { economy += add; };
 void West::addSupport(int add) { support += add; };
 string West::winning() { return ""; }; //return whos winning
 void West::questionrunner(bool a, int questionNum) {
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     switch (questionNum) {
         case 0: 
             if (a) {
@@ -193,6 +193,7 @@ void West::questionrunner(bool a, int questionNum) {
             }
             break;
     }
+    numDecisions++;
     file.close();
 }
 

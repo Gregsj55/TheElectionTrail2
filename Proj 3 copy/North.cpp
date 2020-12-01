@@ -41,7 +41,7 @@ void North::addEconomy(int add) { economy += add; };
 void North::addSupport(int add) { support += add; };
 string North::winning() { return ""; }; //return whos winning
 void North::questionrunner(bool a, int questionNum) {
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     switch (questionNum) {
         // This is for every question and all of the options, each one fits the question. 
         // Trust me
@@ -215,6 +215,7 @@ void North::questionrunner(bool a, int questionNum) {
             }
             break;
     }
+    numDecisions++;
     file.close();
 }
  

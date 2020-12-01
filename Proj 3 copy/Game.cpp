@@ -69,7 +69,17 @@ bool Game::playerTurn(){
             } else if (uChoice[0] == 'n') {
                 n1.questionrunner(false,choice);
             } else {
-                return false;
+                while (uChoice != "69") {
+                    cout << "Invalid entry, try again" << endl;
+                    getline(cin,uChoice);
+                    if (uChoice[0] == 'y') {
+                        n1.questionrunner(true,choice);
+                        break;
+                    } else if (uChoice[0] == 'n') {
+                        n1.questionrunner(false,choice);
+                        break;
+                    }
+                }
             }
             return true;
         } else {

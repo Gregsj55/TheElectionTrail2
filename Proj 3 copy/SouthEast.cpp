@@ -40,7 +40,7 @@ void SouthEast::addEconomy(int add) { economy += add; };
 void SouthEast::addSupport(int add) { support += add; };
 string SouthEast::winning() { return ""; }; //return whos winning
 void SouthEast::questionrunner(bool a, int questionNum) {
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     switch (questionNum) {
         case 0: 
             if (a) {
@@ -193,6 +193,7 @@ void SouthEast::questionrunner(bool a, int questionNum) {
             }
             break;
     }
+    numDecisions++;
     file.close();
 }
 

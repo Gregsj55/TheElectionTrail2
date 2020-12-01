@@ -32,7 +32,7 @@ void TextRunner::setNumTurns(int numTurnsIn) {
 }
 int TextRunner::westChoice() {
     //open file
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
 
     //get random number within range of vector size
     int random;
@@ -147,7 +147,7 @@ int TextRunner::westChoice() {
 }
 int TextRunner::southChoice() {
     int random;
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     int randomNum = rand()%southVect.size();
     random = southVect.at(randomNum);
     if(random == 0){
@@ -257,7 +257,7 @@ int TextRunner::southChoice() {
 }
 int TextRunner::northChoice() {
     int random;
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     
     int randomNum = rand()%northVect.size();
     cout << randomNum << endl;
@@ -363,7 +363,7 @@ int TextRunner::northChoice() {
 }
 int TextRunner::southEastChoice() {
     int random;
-    file.open("file.txt");
+    ofstream file("file.txt", ios::app);
     int randomNum = rand()%southEastVect.size();
     random = southEastVect.at(randomNum);
     if (random == 0) {

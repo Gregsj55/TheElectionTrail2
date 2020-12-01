@@ -114,6 +114,9 @@ int main(){
                 while (ran == false) {
                     ran = game1.playerTurn();
                 }
+                cout << "Good choice!" << endl;
+                cout << oName << " went to the north!" << endl << endl << endl;
+                sleep(2);
                 break;
             } else if (entry == "2") {
                 tutorial();
