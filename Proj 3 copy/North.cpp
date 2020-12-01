@@ -51,8 +51,7 @@ void North::questionrunner(bool a, int questionNum) {
                 authority +=4;
                 file << "Authority +4" << endl;
                 economy -= 3;
-                file << "Economy -3" << endl;
-                
+                file << "Economy -3" << endl;   
             } else {
                 file << "Choice: n" << endl;
                 authority -=3;

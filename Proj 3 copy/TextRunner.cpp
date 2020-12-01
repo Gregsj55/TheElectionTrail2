@@ -251,7 +251,7 @@ int TextRunner::southChoice() {
     //bunch of if else
     //write to file
     numTurns++;
-    westVect.erase(southVect.begin()+randomNum);
+    southVect.erase(southVect.begin()+randomNum);
     file.close();
     return random;
 }
@@ -357,7 +357,7 @@ int TextRunner::northChoice() {
     //bunch of if else
     //write to file
     numTurns++;
-    westVect.erase(northVect.begin()+randomNum);
+    northVect.erase(northVect.begin()+randomNum);
     file.close();
     return random;
 }
@@ -458,7 +458,7 @@ int TextRunner::southEastChoice() {
         file << "Say n to try to bribe them" << endl;
     }
     numTurns++;
-    westVect.erase(southEastVect.begin()+randomNum);
+    southEastVect.erase(southEastVect.begin()+randomNum);
     file.close();
     return random;
 }
