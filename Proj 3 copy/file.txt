@@ -1,0 +1,42 @@
+
+Turn: 1
+Greg's action:
+Hey bud, Welcome back to the North
+Pizza or Burger
+Say y to Pizza
+Say n to Burger
+Choice: y
+Authority +7
+Economy -3
+Kyle's action:
+Golly Jee Welcome to the West!
+A shady lady and her pet husband walk up to you and offfer their services if you promise to support their ... special rights.
+Say y to accept
+Say n to decline
+Choice: n
+Support -5
+Economy +3
+
+Turn: 2
+Greg's action:
+Howdy, Welcome to the South
+Your brother calls you and says he needs bail money
+Say y to break him out of jail instead of paying
+Say n because you don't have a brother...
+Choice: n
+Authority -3
+Economy +7
+Kyle's action:
+Howdy, Welcome to the South
+Your supporters want to know if you like memes
+Say y to pog
+Say n to rage comic
+Choice: y
+Authority +7
+Economy -3
+
+Turn: 3
+Greg's action:
+You were so close, but alas, you were so far
+your opposition took the liberty of couping you right after election, so you never held office
+Better luck next time!
